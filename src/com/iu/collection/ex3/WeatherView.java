@@ -1,12 +1,24 @@
 package com.iu.collection.ex3;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
 
 public class WeatherView {
 	
 	public void view(ArrayList<Weather> wts) {
 		//날씨 전체 정보 출력
 		System.out.println("전체 날씨의 정보를 조회합니다.");
+		
+//		Iterator<String> it = map.keySet().iterator();
+//		
+//		while(it.hasNext()) {
+//			String key = it.next();
+//			System.out.println(map.get(key));
+//		}
+//		
+//		
+		
 		for (int i = 0; i < wts.size(); i++) {
 			System.out.println("도시 이름 : "+wts.get(i).getCity());
 			System.out.println("온도 : "+wts.get(i).getTemperature()+"셀시우스");

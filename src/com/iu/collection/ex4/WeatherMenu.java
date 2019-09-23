@@ -1,19 +1,17 @@
-package com.iu.collection.ex3;
+package com.iu.collection.ex4;
 
-import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Scanner;
-
-import com.iu.collection.ex2.Student;
 
 public class WeatherMenu {
 
-	private ArrayList<Weather> wt;
+	private HashMap<String, Weather> wt;
 	private WeatherService ws;
 	private WeatherView wv;
 	private Scanner sc;
 
 	public WeatherMenu() {
-		wt = new ArrayList<Weather>();
+		wt = new HashMap<String, Weather>();
 		ws = new WeatherService();
 		wv = new WeatherView();
 		sc = new Scanner(System.in);
@@ -25,9 +23,14 @@ public class WeatherMenu {
 		//		2. 날씨정보 추가 - addWeather
 		//		3. 전체 날씨 정보 출력 - view
 		//		4. 날씨 검색 - findWeather
-		//		5. 프로그램 종료
-
-
+		//		5. 날씨 정보 삭제
+		//		6. 프로그램 종료
+		
+		
+		
+		
+		HashMap<String, Weather> map = ws.init();
+		
 		int select = 0;
 		boolean check = true;
 		while (check) {
@@ -36,25 +39,25 @@ public class WeatherMenu {
 			System.out.println("2. 날씨정보 추가");
 			System.out.println("3. 전체 날씨 정보 출력");
 			System.out.println("4. 날씨 검색");
-			System.out.println("5. 프로그램 종료");
+			System.out.println("5. 날씨 정보 삭제");
+			System.out.println("6. 프로그램 종료");
 			select = sc.nextInt();
 			switch (select) {
 			case 1:
-
+				
 				break;
-
 			case 2:
-
-//				ws.studentInput(wts);
-				break;
+				ws.addWeather(wt);
+				break;				
 			case 3:
-
-//				wv.view(wts);
+				wv.view(map);
 				break;
 			case 4:
-
-//				Student stu = ws.studentSearch(wts);
+				Weather wt = ws.findWeather(map);
 				wv.view(wt);
+				break;
+			case 5:
+				wt = ws.deleteWeather(map);
 				break;
 			default:
 				System.out.println("프로그램을 종료합니다.");

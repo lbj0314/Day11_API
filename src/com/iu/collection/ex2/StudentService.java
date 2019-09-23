@@ -55,18 +55,36 @@ public class StudentService {
 		return stu;
 	}//studentSearch
 	
-	//메서드명 studentDelete
-	//이름을 입력해서 삭제
-	public Student studentDelete(ArrayList<Student> stus) {
-		Student stu = null;
+//	메서드명 studentDelete
+//	이름을 입력해서 삭제
+	public String studentDelete(ArrayList<Student> stus) {
+//		stus.remove(stu);
 		System.out.println("삭제할 학생의 이름을 입력하세요.");
 		input = sc.next();
+//		boolean check = false;
+//		String msg = "Delete Fail";
+		Student stu = null;
 		for (int i = 0; i < stus.size(); i++) {
 			if (stus.get(i).getName().equals(input)) {
 				stus.remove(i);
+//				check = true;
+//				msg = "Delete Success";
+				stu = stus.remove(i);
 				break;
 			}//if
 		}//for
-		return stu;
+//		return check;
+//		return msg;
+		return stu.getName();
 	}//studentDelete
+	//object로 받아서 하는 방법
+//	public void studentDelete(ArrayList<Student> stus, Student stu) {
+//		
+//		System.out.println("삭제할 학생의 이름을 입력하세요.");
+//		input = sc.next();
+//				stus.remove(stu);
+//	
+//		
+//	}//studentDelete
+	
 }//class

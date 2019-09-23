@@ -1,5 +1,7 @@
 package com.iu.collection.ex3;
 
+import java.util.StringTokenizer;
+
 public class WeatherService {
 	
 	private StringBuffer sb;
@@ -10,12 +12,16 @@ public class WeatherService {
 		sb.append("Daejon-20.3-58-Sunny-");
 		sb.append("Jeju-23.3-70-Rainy-");
 		sb.append("Incheon-16.3-60-Rainy");
+		System.out.println(sb);
 		
-		//tokeniger
+		//tokenizer
 	}
 	//메서드명 init
 	public void init() {
 		//날씨 정보를 파싱해서 저장
+		StringTokenizer st = new StringTokenizer(sb.toString(),"-");
+		
+		
 		
 	}
 	//메서드명 addWeather

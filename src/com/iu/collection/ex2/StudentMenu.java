@@ -50,6 +50,9 @@ public class StudentMenu {
 				break;
 			case 4:
 				ss.studentDelete(stus);
+//				ss.studentDelete(stus, stu);
+				
+				
 				break;
 			default:
 				System.out.println("프로그램을 종료합니다.");
