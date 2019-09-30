@@ -13,7 +13,7 @@ public class ProductMain {
 		
 		ArrayList<? extends Computer> arr = new ArrayList<Computer>();
 		//Computer와 Computer를 상속 받은 타입.
-		arr.add(t);
+//		arr.add(t);
 		
 		
 		//<Generic>
